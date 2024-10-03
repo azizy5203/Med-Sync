@@ -29,7 +29,7 @@ const AdminLayout = () => {
         <div
           className={`sidebar box-border  md:visible md:w-[18%] md:p-4 md:me-5 ${
             isSidebarOpen ? " visible w-full p-4 md:me-5" : "invisible w-0"
-          } transition-all duration-300 md:block md:w-[18%] bg-sideBar rounded-[24px] overflow-hidden`}>
+          } transition-all duration-300 md:block md:w-[18%] dark:border-none border border-primary bg-sideBar rounded-[24px] overflow-hidden`}>
           <div className="flex justify-between items-center">
             <h3 className="text-primary text-2xl">MedSync</h3>
             <Button
