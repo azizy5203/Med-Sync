@@ -1,8 +1,0 @@
-
-@baseurl=https://jsonplaceholder.typicode.com
-GET {{baseurl}}/todos/1
-###
-GET {{baseurl}}/todos/2
-###
-GET {{baseurl}}/todos/3
-

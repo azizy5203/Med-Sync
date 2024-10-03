@@ -1,9 +1,10 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
 function Home() {
   return (
     <Tabs
       defaultValue="account"
-      className="w-[400px] border border-sky-400">
+      className="w-[400px] border border-primary">
       <TabsList>
         <TabsTrigger value="account">
           <span className="z-20 font-semibold">Account</span>

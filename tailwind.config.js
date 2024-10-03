@@ -10,7 +10,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       gridTemplateColumns: {
-        admin: "13fr 82fr",
+        "admin-desktop": "18% 1fr",
+        "admin-mobile": "1fr",
       },
       colors: {
         background: "hsl(var(--background))",
