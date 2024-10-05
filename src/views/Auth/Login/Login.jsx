@@ -2,13 +2,9 @@ import { Input } from "@/components/ui/input";
 
 function Login() {
   return (
-    <div className="w-1/2 mx-auto h-full">
-      <h1 className="text-background">Login</h1>
-      <Input
-        type="email"
-        placeholder="Email"
-      />
-    </div>
+    <h1 className="leading-0">Login</h1>
+    // <div className="leading-0 bg-red-600">
+    // </div>
   );
 }
 
