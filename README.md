@@ -5,7 +5,7 @@
 ## 🚀 Quick Overview
 
 - **Frontend**: React + Shadcn UI + Tailwind CSS
-- **Backend**: Dot Net
+- **Backend**: NodeJS + ExpressJS + MongoDB
 - **State Management**: Redux Toolkit
 - **Responsive**: Built for all devices
 <!-- - **Security**: HIPAA-compliant, encrypted data -->
@@ -32,6 +32,6 @@
 
 - **Frontend**: React, Shadcn UI, Tailwind CSS
 - **State Management**: React Context API
-- **Backend**: RESTful APIs
+- **Backend**: NodeJS, ExpressJS, MongoDB
 - **Styling**: Tailwind CSS for custom utility-first design
 - **UI Components**: Shadcn UI for modern, sleek design components
