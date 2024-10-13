@@ -45,18 +45,12 @@ function Form({
             <div>{children}</div>
             {defaultActions && (
               <div className="flex gap-4 mt-8">
-                <Button
-                  type="submit"
-                  label="Submit"
-                  title="Submit"
-                  variant="default"
-                />
+                <Button type="submit">Submit</Button>
                 <Button
                   type="reset"
-                  label="Reset"
-                  title="Reset"
-                  variant="outline"
-                />
+                  variant="outline">
+                  Reset
+                </Button>
               </div>
             )}
           </FormikForm>
