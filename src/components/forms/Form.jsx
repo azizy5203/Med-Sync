@@ -45,7 +45,11 @@ function Form({
             <div>{children}</div>
             {defaultActions && (
               <div className="flex gap-4 mt-8">
-                <Button type="submit">Submit</Button>
+                <Button
+                  type="submit"
+                  className="text-white font-medium">
+                  Submit
+                </Button>
                 <Button
                   type="reset"
                   variant="outline">

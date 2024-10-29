@@ -1,16 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "@/vendors/axios";
-
+// import { toast } from "sonner";
 import router from "@/router";
 import { toast } from "react-toastify";
 
-const showToast = (msg, type = "success") =>
+const showToast = (msg, type = "success") => {
   toast(msg, {
     draggable: true,
     type: type,
-    theme: "light",
+    theme: localStorage.getItem("vite-ui-theme"),
     autoClose: 1300,
   });
+};
 
 export const authSlice = createSlice({
   name: "auth",
