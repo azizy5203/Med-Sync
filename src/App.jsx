@@ -6,12 +6,13 @@ import Spinner from "./components/shared/Spinner/Spinner";
 import router from "./router";
 
 import { ThemeProvider } from "./providers/theme-provider";
-import { Toaster } from "@/components/ui/sonner";
+// import { Toaster } from "@/components/ui/sonner";
 import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
+      <ToastContainer />
       <ThemeProvider
         defaultTheme="dark"
         storageKey="vite-ui-theme">
@@ -20,8 +21,7 @@ function App() {
           router={router}
         />
       </ThemeProvider>
-      <ToastContainer />
-      <Toaster />
+      {/* <Toaster /> */}
       <SpeedInsights />
       <Analytics />
     </>

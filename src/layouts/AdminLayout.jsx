@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "@/store/auth";
 import Header from "@/components/core/Header";
+import Sidebar from "@/components/core/Sidebar";
 import { Button } from "@/components/ui/button";
 import { X, Sidebar as SideIcon, Sun, Moon } from "lucide-react";
 
@@ -25,22 +26,10 @@ const AdminLayout = () => {
   return (
     <>
       <div className="flex p-5 h-screen bg-background">
-        {/* Sidebar */}
-        <div
-          className={`sidebar box-border  md:visible md:w-[18%] md:p-4 md:me-5 ${
-            isSidebarOpen ? " visible w-full p-4 md:me-5" : "invisible w-0"
-          } transition-all duration-300 md:block md:w-[18%] dark:border-none border border-primary bg-sideBar rounded-[24px] overflow-hidden`}>
-          <div className="flex justify-between items-center">
-            <h3 className="text-primary text-2xl">MedSync</h3>
-            <Button
-              onClick={toggleSidebar}
-              variant="primary"
-              size="icon"
-              className="md:hidden ms-auto">
-              <X color="background" />
-            </Button>
-          </div>
-        </div>
+        <Sidebar
+          isSidebarOpen={isSidebarOpen}
+          toggleSidebar={toggleSidebar}
+        />
 
         <div
           className={` md:flex md:flex-col md:border md:border-primary md:visible md:w-full transition-all duration-300 rounded-[24px] overflow-x-hidden ${
