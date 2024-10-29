@@ -2,6 +2,7 @@ import { X, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useDispatch } from "react-redux";
 import { logout } from "@/store/auth";
+import Logo from "@/assets/img/logo.svg";
 
 function Sidebar({ isSidebarOpen, toggleSidebar }) {
   const dispatch = useDispatch();
@@ -12,7 +13,14 @@ function Sidebar({ isSidebarOpen, toggleSidebar }) {
         isSidebarOpen ? " visible w-full p-4 lg:me-5" : "invisible w-0"
       } transition-all duration-300 flex flex-col items-start justify-between lg:w-[25%] dark:border-none border border-primary bg-sideBar rounded-[24px] overflow-hidden`}>
       <div className="flex justify-between items-center w-full">
-        <h3 className="text-primary text-2xl">MedSync</h3>
+        <div className="flex items-center gap-2">
+          <img
+            src={Logo}
+            alt="MedSync"
+            className="w-5"
+          />
+          <h3 className="text-primary text-2xl">MedSync</h3>
+        </div>
         <Button
           onClick={toggleSidebar}
           variant="primary"

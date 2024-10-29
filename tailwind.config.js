@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import animate from "tailwindcss-animate";
 export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -56,7 +57,10 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 };
