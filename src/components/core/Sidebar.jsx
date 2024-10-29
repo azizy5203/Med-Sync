@@ -8,16 +8,16 @@ function Sidebar({ isSidebarOpen, toggleSidebar }) {
 
   return (
     <div
-      className={`sidebar box-border md:visible md:w-[18%] md:p-4 border md:me-5 ${
-        isSidebarOpen ? " visible w-full p-4 md:me-5" : "invisible w-0"
-      } transition-all duration-300 flex flex-col items-start justify-between md:w-[18%] dark:border-none border border-primary bg-sideBar rounded-[24px] overflow-hidden`}>
+      className={`sidebar box-border lg:visible lg:w-[18%] lg:p-4 border lg:me-5 ${
+        isSidebarOpen ? " visible w-full p-4 lg:me-5" : "invisible w-0"
+      } transition-all duration-300 flex flex-col items-start justify-between lg:w-[25%] dark:border-none border border-primary bg-sideBar rounded-[24px] overflow-hidden`}>
       <div className="flex justify-between items-center w-full">
         <h3 className="text-primary text-2xl">MedSync</h3>
         <Button
           onClick={toggleSidebar}
           variant="primary"
           size="icon"
-          className="md:hidden ms-auto">
+          className="lg:hidden ms-auto">
           <X color="background" />
         </Button>
       </div>

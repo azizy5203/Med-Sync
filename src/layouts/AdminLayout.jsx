@@ -32,7 +32,7 @@ const AdminLayout = () => {
         />
 
         <div
-          className={` md:flex md:flex-col md:border md:border-primary md:visible md:w-full transition-all duration-300 rounded-[24px] overflow-x-hidden ${
+          className={` lg:flex lg:flex-col lg:border lg:border-primary lg:visible lg:w-full transition-all duration-300 rounded-[24px] overflow-x-hidden ${
             isSidebarOpen
               ? "invisible w-0 p-0"
               : "flex flex-col visible w-full border border-primary"
@@ -42,7 +42,7 @@ const AdminLayout = () => {
               onClick={toggleSidebar}
               variant="primary"
               size="icon"
-              className="md:hidden">
+              className="lg:hidden">
               <SideIcon color="background" />
             </Button>
 
