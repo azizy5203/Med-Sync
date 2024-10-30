@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "@/vendors/axios";
-// import { toast } from "sonner";
 import router from "@/router";
 import { toast } from "react-toastify";
 
@@ -12,6 +11,14 @@ const showToast = (msg, type = "success") => {
     autoClose: 1300,
   });
 };
+
+export const login = createAsyncThunk(
+  "auth/login",
+  async (values, thunkAPI) => {
+    const { data } = await axios.post("/auth/login", values);
+    return data;
+  }
+);
 
 export const authSlice = createSlice({
   name: "auth",
@@ -27,8 +34,9 @@ export const authSlice = createSlice({
       state.user = payload.user;
       state.token = payload.token;
     },
-    setLodaing: (state, { payload }) => (state.isLoading = payload),
-
+    setLoading: (state, { payload }) => {
+      state.isLoading = payload;
+    },
     logout: (state) => {
       state.user = null;
       state.token = null;
@@ -38,29 +46,24 @@ export const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(login.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(login.fulfilled, (state, action) => {
       state.user = action.payload.user;
       state.token = action.payload.token;
       localStorage.setItem("USER", JSON.stringify(action.payload.user));
       localStorage.setItem("TOKEN", action.payload.token);
-      showToast("logged in !");
+      state.isLoading = false;
+      showToast("logged in!");
     });
-
     builder.addCase(login.rejected, (state, action) => {
+      state.isLoading = false;
       console.error(action.error);
       showToast("Invalid Credentials", "error");
-      return action.error;
     });
   },
 });
-
-export const login = createAsyncThunk(
-  "auth/login",
-  async (values, thunkAPI) => {
-    const { data } = await axios.post("/auth/login", values);
-    return data;
-  }
-);
 
 export const register = (values, isAdmin) => {
   return async (dispatch) => {
@@ -79,6 +82,6 @@ export const register = (values, isAdmin) => {
   };
 };
 
-export const { getUser, getToken, logout, setStoreState, setLodaing } =
+export const { getUser, getToken, logout, setStoreState, setLoading } =
   authSlice.actions;
 export default authSlice.reducer;
