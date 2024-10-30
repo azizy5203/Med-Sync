@@ -69,7 +69,7 @@ const AdminLayout = () => {
             </Button>
           </div>
 
-          <div className="p-6 border border-red-500 h-[calc(100% - 73px)]">
+          <div className="p-6 border">
             <Outlet />
           </div>
         </div>
