@@ -1,9 +1,10 @@
-import { X, LogOut } from "lucide-react";
+import { X, LogOut, UsersRound, ClipboardList } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { useDispatch } from "react-redux";
 import { logout } from "@/store/auth";
 import Logo from "@/assets/img/logo.svg";
-import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
   const dispatch = useDispatch();
@@ -12,11 +13,12 @@ function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
     <div
       className={`sidebar box-border lg:visible lg:w-[18%] lg:p-4 border lg:me-5 ${
         isSidebarOpen ? " visible w-full p-4 lg:me-5" : "invisible w-0"
-      } transition-all duration-300 flex flex-col items-start justify-between ${
+      } transition-all duration-300 flex flex-col items-start gap-8 ${
         desktopSidebarOpen ? "lg:w-[25%]" : "lg:w-[5%]"
       } dark:border-none border border-primary bg-sideBar rounded-[24px] overflow-hidden`}>
       <div className="flex justify-between items-center w-full">
-        <div
+        <Link
+          to="/"
           className={`flex items-center gap-2 ${
             !desktopSidebarOpen && !isSidebarOpen ? "mx-auto" : ""
           }`}>
@@ -35,7 +37,7 @@ function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
             }`}>
             MedSync
           </h3>
-        </div>
+        </Link>
         <Button
           onClick={toggleSidebar}
           variant="primary"
@@ -44,11 +46,46 @@ function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
           <X color="background" />
         </Button>
       </div>
+
+      <ul
+        className={`flex flex-col gap-4 justify-center w-full ${
+          !desktopSidebarOpen ? "!mx-auto" : "!mx-0"
+        } ${isSidebarOpen ? "!mx-0" : "!mx-auto"}`}>
+        <li
+          className={`sidebar-link hover:bg-secondary rounded-md ${
+            desktopSidebarOpen || isSidebarOpen ? "p-4" : "px-2"
+          }`}>
+          <NavLink
+            to="/users"
+            className="flex items-center gap-3">
+            <UsersRound
+              className="stroke-primary"
+              size={desktopSidebarOpen || isSidebarOpen ? "20px" : "40px"}
+            />
+            {(desktopSidebarOpen || isSidebarOpen) && <span>Users</span>}
+          </NavLink>
+        </li>
+        <li
+          className={`sidebar-link hover:bg-secondary rounded-md ${
+            desktopSidebarOpen || isSidebarOpen ? "p-4" : "px-2"
+          }`}>
+          <NavLink
+            to="/tasks"
+            className="flex items-center gap-3">
+            <ClipboardList
+              className="stroke-primary"
+              size={desktopSidebarOpen || isSidebarOpen ? "20px" : "40px"}
+            />
+            {(desktopSidebarOpen || isSidebarOpen) && <span>Users</span>}
+          </NavLink>
+        </li>
+      </ul>
+
       <Button
         onClick={() => dispatch(logout())}
         variant="primary"
         size={desktopSidebarOpen ? "default" : "icon"}
-        className="flex gap-2">
+        className="flex gap-2 mt-auto">
         {desktopSidebarOpen && (
           <span className="text-white font-medium text-lg">Logout</span>
         )}

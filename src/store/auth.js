@@ -81,5 +81,4 @@ export const register = (values, isAdmin) => {
 
 export const { getUser, getToken, logout, setStoreState, setLodaing } =
   authSlice.actions;
-
 export default authSlice.reducer;
