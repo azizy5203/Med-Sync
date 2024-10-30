@@ -40,7 +40,7 @@ const AdminLayout = () => {
               ? "invisible w-0 p-0"
               : "flex flex-col visible w-full border border-primary"
           }`}>
-          <div className="flex items-center justify-between border-b border-primary  p-4">
+          <div className="flex items-center justify-between border-b border-primary p-4 sticky">
             <Button
               onClick={toggleSidebar}
               variant="primary"
@@ -69,7 +69,7 @@ const AdminLayout = () => {
             </Button>
           </div>
 
-          <div className="p-6">
+          <div className="p-6 border border-red-500 h-[calc(100% - 73px)]">
             <Outlet />
           </div>
         </div>
