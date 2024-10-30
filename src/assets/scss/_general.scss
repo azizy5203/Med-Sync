@@ -33,6 +33,6 @@
 }
 
 // active sidebar routes
-.sidebar-link:has(.active) {
+.sidebar-link.active {
   background-color: hsl(var(--active-sidebar-link));
 }

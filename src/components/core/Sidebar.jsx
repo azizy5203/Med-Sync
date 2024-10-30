@@ -51,13 +51,12 @@ function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
         className={`flex flex-col gap-4 justify-center w-full ${
           !desktopSidebarOpen ? "!mx-auto" : "!mx-0"
         } ${isSidebarOpen ? "!mx-0" : "!mx-auto"}`}>
-        <li
-          className={`sidebar-link hover:bg-secondary rounded-md ${
-            desktopSidebarOpen || isSidebarOpen ? "p-4" : "px-2"
-          }`}>
+        <li>
           <NavLink
             to="/users"
-            className="flex items-center gap-3">
+            className={`flex items-center gap-3 sidebar-link hover:bg-secondary rounded-sm ${
+              desktopSidebarOpen || isSidebarOpen ? "p-4" : "px-2"
+            }`}>
             <UsersRound
               className="stroke-primary"
               size={desktopSidebarOpen || isSidebarOpen ? "20px" : "40px"}
@@ -65,13 +64,12 @@ function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
             {(desktopSidebarOpen || isSidebarOpen) && <span>Users</span>}
           </NavLink>
         </li>
-        <li
-          className={`sidebar-link hover:bg-secondary rounded-md ${
-            desktopSidebarOpen || isSidebarOpen ? "p-4" : "px-2"
-          }`}>
+        <li>
           <NavLink
             to="/tasks"
-            className="flex items-center gap-3">
+            className={`flex items-center gap-3 sidebar-link hover:bg-secondary rounded-sm ${
+              desktopSidebarOpen || isSidebarOpen ? "p-4" : "px-2"
+            }`}>
             <ClipboardList
               className="stroke-primary"
               size={desktopSidebarOpen || isSidebarOpen ? "20px" : "40px"}
