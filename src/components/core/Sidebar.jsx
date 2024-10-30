@@ -86,13 +86,14 @@ function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
         variant="primary"
         size={desktopSidebarOpen ? "default" : "icon"}
         className="flex gap-2 mt-auto">
-        {desktopSidebarOpen && (
-          <span className="text-white font-medium text-lg">Logout</span>
-        )}
         <LogOut
+          className="rotate-180"
           color="background"
           size="20px"
         />
+        {desktopSidebarOpen && (
+          <span className="text-white font-medium text-lg">Logout</span>
+        )}
       </Button>
     </div>
   );
