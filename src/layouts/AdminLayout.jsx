@@ -12,6 +12,7 @@ import { useTheme } from "@/providers/theme-provider.jsx";
 
 const AdminLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar state
+  const [desktopSidebarOpen, setdesktopSidebarOpen] = useState(false); // Sidebar state
   const navigate = useNavigate();
 
   const { setTheme, theme } = useTheme();
@@ -21,13 +22,15 @@ const AdminLayout = () => {
   //   dispatch(logout());
   // }
 
-  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen); // Toggle sidebar
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen); // Toggle Mobile sidebar
+  const toggleDesktopSidebar = () => setdesktopSidebarOpen(!desktopSidebarOpen); // Toggle Desktop sidebar
 
   return (
     <>
       <div className="flex p-5 h-screen bg-background">
         <Sidebar
           isSidebarOpen={isSidebarOpen}
+          desktopSidebarOpen={desktopSidebarOpen}
           toggleSidebar={toggleSidebar}
         />
 
@@ -43,6 +46,13 @@ const AdminLayout = () => {
               variant="primary"
               size="icon"
               className="lg:hidden">
+              <SideIcon color="background" />
+            </Button>
+            <Button
+              onClick={toggleDesktopSidebar}
+              variant="primary"
+              size="icon"
+              className="hidden lg:inline-flex">
               <SideIcon color="background" />
             </Button>
 
