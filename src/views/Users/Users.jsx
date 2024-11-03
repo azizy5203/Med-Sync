@@ -1,9 +1,25 @@
 import { Edit, Trash2 } from "lucide-react";
 import { DataTable } from "@/components/tables/DataTable/DataTable";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, forwardRef } from "react";
 import axios from "@/vendors/axios";
 import AppModal from "@/components/shared/AppModal/AppModal";
+import TextField from "@/components/forms/TextField";
+import Form from "@/components/forms/Form";
+
+const EditButton = forwardRef((props, ref) => (
+  <Button
+    ref={ref}
+    variant="ghost"
+    size="icon"
+    {...props}>
+    <Edit
+      size={20}
+      color="hsl(var(--primary))"
+    />
+  </Button>
+));
+EditButton.displayName = "EditButton";
 
 const columns = [
   {
@@ -23,14 +39,13 @@ const columns = [
     cell: ({ row }) => {
       return (
         <span className="flex items-center justify-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon">
-            <Edit
-              size={20}
-              color="hsl(var(--primary))"
-            />
-          </Button>
+          <AppModal
+            title="Edit User"
+            description="Edit User"
+            trigger={<EditButton />}>
+            {/* <span>aasdasd</span> */}
+          </AppModal>
+
           <Button
             variant="ghost"
             size="icon">

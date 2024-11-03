@@ -10,12 +10,10 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-function AppModal({ title, description, children }) {
+function AppModal({ title, description, trigger, children }) {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
-      </DialogTrigger>
+      <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
