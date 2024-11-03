@@ -3,7 +3,6 @@
 @tailwind utilities;
 @layer base {
   :root {
-    --radius: 0.5rem;
     --background: 0 0% 94%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -31,6 +30,7 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --side-bar: 0 0% 94%;
+    --scrollbar-track: 208 65% 87%;
   }
   .dark {
     --background: 222.2 84% 4.9%;
@@ -39,7 +39,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 212 87% 50%;
+    --primary: 212 70% 50%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -59,6 +59,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
     --side-bar: 218 10% 15%;
+    --scrollbar-track: 208 65% 20%;
   }
 }
 @layer base {

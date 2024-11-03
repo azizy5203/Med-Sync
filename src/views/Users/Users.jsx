@@ -56,12 +56,13 @@ function Users() {
     load();
   }, []);
   return (
-    <div className="border border-primary">
+    <section className="flex flex-col  gap-4">
+      <h3 className="text-4xl font-bold">Users</h3>
       <DataTable
         columns={columns}
         data={users}
       />
-    </div>
+    </section>
   );
 }
 
