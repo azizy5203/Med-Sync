@@ -3,6 +3,7 @@ import { DataTable } from "@/components/tables/DataTable/DataTable";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import axios from "@/vendors/axios";
+import AppModal from "@/components/shared/AppModal/AppModal";
 
 const columns = [
   {
