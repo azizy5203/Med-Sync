@@ -34,4 +34,4 @@
 - **State Management**: React Context API
 - **Backend**: NodeJS, ExpressJS, MongoDB
 - **Styling**: Tailwind CSS for custom utility-first design
-- **UI Components**: Shadcn UI for modern, sleek design component
+- **UI Components**: Shadcn UI for modern, sleek design components
