@@ -1,9 +1,9 @@
 import React from "react";
 import { Formik, Form as FormikForm } from "formik";
 import PropTypes from "prop-types";
-import Spinner from "../shared/Spinner/Spinner";
+import Spinner from "../shared/Spinner/Spinner.jsx";
 import { Button } from "../ui/button";
-
+import { useSelector } from "react-redux";
 Form.propTypes = {
   children: React.ReactNode,
   // actions: {
@@ -29,33 +29,36 @@ function Form({
   onSubmit,
   onReset,
 }) {
+  const isLoading = useSelector((state) => state.auth.isLoading);
   return (
     <Formik
       initialValues={isEditing ? model : initialValues}
       validationSchema={schema}
       onSubmit={onSubmit}
       onReset={onReset}>
-      {({ isSubmitting }) =>
-        isSubmitting ? (
-          <div className="flex justify-center items-center">
-            <Spinner />
-          </div>
-        ) : (
-          <FormikForm className="rounded-md p-4">
-            <div>{children}</div>
-            {defaultActions && (
-              <div className="flex gap-4 mt-8">
-                <Button type="submit">Submit</Button>
-                <Button
-                  type="reset"
-                  variant="outline">
-                  Reset
-                </Button>
-              </div>
-            )}
-          </FormikForm>
-        )
-      }
+      {isLoading ? (
+        <div className="flex justify-center items-center p-4">
+          <Spinner />
+        </div>
+      ) : (
+        <FormikForm className="rounded-md p-4">
+          <div>{children}</div>
+          {defaultActions && (
+            <div className="flex gap-4 mt-8">
+              <Button
+                type="submit"
+                className="text-white font-medium">
+                Submit
+              </Button>
+              <Button
+                type="reset"
+                variant="outline">
+                Reset
+              </Button>
+            </div>
+          )}
+        </FormikForm>
+      )}
     </Formik>
   );
 }

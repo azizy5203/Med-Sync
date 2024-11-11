@@ -1,7 +1,6 @@
 import TextField from "@/components/forms/TextField";
 import * as yup from "yup";
 import Form from "@/components/forms/Form";
-import { toast } from "sonner";
 import { useDispatch } from "react-redux";
 import { login } from "@/store/auth";
 
@@ -14,15 +13,16 @@ function Login() {
   const dispatch = useDispatch();
 
   async function userLogin(values) {
-    await dispatch(login(values));
+    console.log("DD");
+    dispatch(login(values));
 
     // toast("Toasted");
     // console.log({ ...values });
   }
 
   return (
-    <div className="border h-full flex justify-center items-center">
-      <div className="border w-1/2 ">
+    <div className="md:border-s md:border-primary h-full flex justify-center items-center">
+      <div className="border-2 border-primary rounded-sm w-1/2 ">
         <h1 className="leading-0 text-4xl text-center">Login</h1>
 
         <div>
