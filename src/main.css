@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer base {
   :root {
-    --background: 0 0% 94%;
+    --background: 216.92 46.43% 89.02%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -29,7 +29,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --side-bar: 0 0% 94%;
+    --side-bar: 216.92 46.43% 85%;
     --scrollbar-track: 208 65% 87%;
   }
   .dark {

@@ -11,29 +11,26 @@ function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
 
   return (
     <div
-      className={`sidebar box-border lg:visible lg:w-[18%] lg:p-4 border lg:me-5 ${
-        isSidebarOpen ? " visible w-full p-4 lg:me-5" : "invisible w-0"
-      } transition-all duration-300 flex flex-col items-start gap-8 ${
-        desktopSidebarOpen ? "lg:w-[25%]" : "lg:w-[5%]"
-      } dark:border-none border border-primary bg-sideBar rounded-[24px] overflow-hidden`}>
+      className={`sidebar transition-all duration-300 flex flex-col items-start gap-8 box-border lg:visible lg:p-4 border lg:me-5 
+        ${isSidebarOpen ? " visible w-full p-4 lg:me-5" : "invisible w-0"} 
+        ${desktopSidebarOpen ? "lg:w-[25%]" : "lg:w-[5%]"} 
+        dark:border-none border border-primary bg-sideBar rounded-[24px] overflow-hidden`}>
       <div className="flex justify-between items-center w-full">
         <Link
           to="/"
           className={`flex items-center gap-2 ${
-            !desktopSidebarOpen && !isSidebarOpen ? "mx-auto" : ""
+            !desktopSidebarOpen && !isSidebarOpen ? "" : ""
           }`}>
           <img
             src={Logo}
             alt="MedSync"
-            className={`transition-all duration-300 ${
-              desktopSidebarOpen || isSidebarOpen ? "w-5" : "w-10"
-            }`}
+            className="transition-all ps-4 duration-300 w-10"
           />
           <h3
             className={`text-primary text-2xl transition-all duration-300 ${
               desktopSidebarOpen || isSidebarOpen
-                ? "opacity-100 w-auto"
-                : "opacity-0 w-0"
+                ? "block w-auto"
+                : "hidden w-0"
             }`}>
             MedSync
           </h3>
@@ -54,27 +51,29 @@ function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
         <li>
           <NavLink
             to="/users"
-            className={`flex items-center gap-3 sidebar-link hover:bg-secondary rounded-sm ${
-              desktopSidebarOpen || isSidebarOpen ? "p-4" : "px-2"
-            }`}>
+            className="sidebar-link flex items-center gap-3 p-4 hover:bg-secondary rounded-sm whitespace-nowrap">
             <UsersRound
-              className="stroke-primary"
-              size={desktopSidebarOpen || isSidebarOpen ? "20px" : "40px"}
+              className="stroke-primary min-w-6"
+              size="24px"
             />
-            {(desktopSidebarOpen || isSidebarOpen) && <span>Users</span>}
+            <span
+              className={!(desktopSidebarOpen || isSidebarOpen) && "hidden"}>
+              Users
+            </span>
           </NavLink>
         </li>
         <li>
           <NavLink
             to="/tasks"
-            className={`flex items-center gap-3 sidebar-link hover:bg-secondary rounded-sm ${
-              desktopSidebarOpen || isSidebarOpen ? "p-4" : "px-2"
-            }`}>
+            className="sidebar-link flex items-center gap-3 p-4 hover:bg-secondary rounded-sm whitespace-nowrap">
             <ClipboardList
-              className="stroke-primary"
-              size={desktopSidebarOpen || isSidebarOpen ? "20px" : "40px"}
+              className="stroke-primary min-w-6"
+              size="24px"
             />
-            {(desktopSidebarOpen || isSidebarOpen) && <span>Users</span>}
+            <span
+              className={!(desktopSidebarOpen || isSidebarOpen) && "hidden"}>
+              Tasks
+            </span>
           </NavLink>
         </li>
       </ul>
@@ -83,7 +82,7 @@ function Sidebar({ isSidebarOpen, desktopSidebarOpen, toggleSidebar }) {
         onClick={() => dispatch(logout())}
         variant="primary"
         size={desktopSidebarOpen ? "default" : "icon"}
-        className="flex gap-2 mt-auto">
+        className="flex gap-2 mt-auto mx-auto">
         <LogOut
           className="rotate-180"
           color="background"

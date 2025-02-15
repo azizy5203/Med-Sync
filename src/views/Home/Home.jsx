@@ -2,10 +2,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 function Home() {
   return (
-    <div className="text-center">
-      <h1 className="text-5xl font-bold text-primary">MedSync</h1>
-      <h4 className="text-2xl font-medium text-secondary-foreground">
-        Synchronizing Healthcare, Empowering Care. 🌍💙
+    <div className="bg-secondary text-center flex flex-col items-center justify-center h-full">
+      <h1 className="text-4xl lg:text-7xl font-bold text-primary">MedSync</h1>
+      <h4 className="text-base lg:text-4xl font-medium text-secondary-foreground">
+        Synchronizing Healthcare For Connected Wellness 🌍💙
       </h4>
     </div>
     // <Tabs
